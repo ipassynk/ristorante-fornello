@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  margin-top: 50px;
+}
+
+/deep/ .ui-datatable.menu-table {
+  .ui-datatable-header {
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    background-color: #7986CA;
+  }
+}

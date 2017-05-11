@@ -1,0 +1,16 @@
+.rf-jumbotron, .container-fluid {
+  color: white;
+  background-color: #7986CA;
+}
+
+@media only screen and (min-width: 992px) {
+  p {
+    margin-top: 60px;
+  }
+
+  .rf-jumbotron {
+    border-radius: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

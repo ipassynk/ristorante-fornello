@@ -1,0 +1,22 @@
+<div *ngFor="let card of cards; let isEven = even" class="card">
+  <div class="row">
+    <ng-container *ngTemplateOutlet="isEven ? sideTpl : mainTpl;  context: {$implicit: card}"></ng-container>
+    <ng-container *ngTemplateOutlet="isEven ? mainTpl : sideTpl;  context: {$implicit: card}"></ng-container>
+  </div>
+</div>
+
+<ng-template #sideTpl let-card>
+  <div class="col-md-3 col-sm-4">
+    <h2>{{card.side}}</h2>
+  </div>
+</ng-template>
+
+<ng-template #mainTpl let-card>
+  <div class="col-md-9 col-sm-6">
+    <h2>{{card.header}}</h2>
+    <ng-container [ngTemplateOutlet]="card.contentTpl?.templateRef"></ng-container>
+    <!-- TODO -->
+    <a class="more-link" href="#">More »</a>
+  </div>
+</ng-template>
+

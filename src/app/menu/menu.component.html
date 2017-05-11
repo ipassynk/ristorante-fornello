@@ -1,0 +1,18 @@
+<p-dataTable [value]="items" sortField="category" rowGroupMode="subheader"
+             styleClass="menu-table"
+             (onRowClick)="showDetails($event)"
+             groupField="category" [style]="{'margin-top':'50px'}">
+  <p-header>Ristorante Il Fornello Menu</p-header>
+  <ng-template pTemplate="rowgroupheader" let-rowData>{{rowData['category']}}</ng-template>
+  <p-column field="name" header="Name" sortable="true" [style]="{'width':'30%'}"></p-column>
+  <p-column field="description" header="Description" sortable="true"></p-column>
+  <p-column field="price" header="Price" [style]="{'width':'100px'}">
+    <ng-template let-col let-item="rowData" pTemplate="body">
+      <span>{{item[col.field] | currency:'USD':true:'.0-0'}}</span>
+    </ng-template>
+  </p-column>
+</p-dataTable>
+
+<p-dialog header="Menu Item Details" [(visible)]="displayItem">
+  Details for {{displayItem?.name}} ....
+</p-dialog>

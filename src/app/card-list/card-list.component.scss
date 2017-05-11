@@ -1,0 +1,13 @@
+.card {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.card:last-of-type {
+  border-bottom: 0;
+}
+
+.more-link {
+  display: block;
+}
