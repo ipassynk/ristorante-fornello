@@ -1,6 +1,11 @@
 # RistoranteFornello
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+Ristorante Fornello project is a small Angular 2 assignment to create Angular application based on provided design mock. The project uses the following third party libraries:
+ - bootstrap for css
+ - PrimeNG to display menu in grid
+ - angular-in-memory-web-api to mock http services in memory
+ 
+ This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
 
