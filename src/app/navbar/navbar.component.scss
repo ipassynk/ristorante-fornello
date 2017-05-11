@@ -4,6 +4,13 @@
   border-bottom: 2px solid #181E80;
   margin-bottom: 0;
 
+  .navbar-brand {
+    padding: 0;
+    img {
+      height: 50px;
+    }
+  }
+
   .navbar-nav {
     .active {
       a, a:hover, a:focus {
