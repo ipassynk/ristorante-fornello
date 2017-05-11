@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {DebugElement} from '@angular/core';
 import {DataTableModule} from 'primeng/components/datatable/datatable';
 import {DialogModule} from 'primeng/components/dialog/dialog';
@@ -9,6 +9,20 @@ import 'rxjs/add/observable/of';
 import {MenuComponent} from 'app/menu/menu.component';
 import {MenuService} from 'app/services/menu.service';
 import {By} from '@angular/platform-browser';
+
+
+
+/** Creates a fake event object with any desired event type. */
+export function createFakeEvent(type: string) {
+  let event = document.createEvent('Event');
+  event.initEvent(type, true, true);
+  return event;
+}
+
+function dispatchFakeEvent(node: Node | Window, type: string) {
+  node.dispatchEvent(createFakeEvent(type));
+}
+
 
 describe('CardListComponent', () => {
   let fixture: ComponentFixture<MenuComponent>, comp: MenuComponent,
@@ -74,4 +88,16 @@ describe('CardListComponent', () => {
     expect(cells.length).toBe(2);
   }));
 
+  fit('should call showDetails on row click', async(() => {
+    const spy = spyOn(comp, 'showDetails');
+    fixture.detectChanges();
+
+    const cell = debugElement.queryAll(By.css('.ui-datatable-odd .ui-cell-data'))[0];
+    cell.nativeElement.click();
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      expect(spy).toHaveBeenCalled();
+    });
+  }));
 });
