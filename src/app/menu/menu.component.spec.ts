@@ -88,7 +88,7 @@ describe('CardListComponent', () => {
     expect(cells.length).toBe(2);
   }));
 
-  fit('should call showDetails on row click', async(() => {
+  it('should call showDetails on row click', async(() => {
     const spy = spyOn(comp, 'showDetails');
     fixture.detectChanges();
 
