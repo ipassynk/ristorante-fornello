@@ -1,7 +1,7 @@
 <div *ngFor="let card of cards; let isEven = even" class="card">
   <div class="row">
-    <ng-container *ngTemplateOutlet="isEven ? sideTpl : mainTpl;  context: {$implicit: card}"></ng-container>
     <ng-container *ngTemplateOutlet="isEven ? mainTpl : sideTpl;  context: {$implicit: card}"></ng-container>
+    <ng-container *ngTemplateOutlet="isEven ? sideTpl : mainTpl;  context: {$implicit: card}"></ng-container>
   </div>
 </div>
 
