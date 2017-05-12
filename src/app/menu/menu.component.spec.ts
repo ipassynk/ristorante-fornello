@@ -10,20 +10,6 @@ import {MenuComponent} from 'app/menu/menu.component';
 import {MenuService} from 'app/services/menu.service';
 import {By} from '@angular/platform-browser';
 
-
-
-/** Creates a fake event object with any desired event type. */
-export function createFakeEvent(type: string) {
-  let event = document.createEvent('Event');
-  event.initEvent(type, true, true);
-  return event;
-}
-
-function dispatchFakeEvent(node: Node | Window, type: string) {
-  node.dispatchEvent(createFakeEvent(type));
-}
-
-
 describe('CardListComponent', () => {
   let fixture: ComponentFixture<MenuComponent>, comp: MenuComponent,
     debugElement: DebugElement, element: HTMLElement;

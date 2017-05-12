@@ -21,6 +21,7 @@ import {FooterComponent} from './footer/footer.component';
 import {AppRoutingModule} from 'app/app-routing.module';
 import {CardListComponent} from './card-list/card-list.component';
 import {CardContentDirective, CardDirective} from 'app/card-list/card.component';
+import {FragmentDirective} from 'app/shared/fragment.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {CardContentDirective, CardDirective} from 'app/card-list/card.component'
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    FragmentDirective
   ],
   imports: [
     BrowserModule,
